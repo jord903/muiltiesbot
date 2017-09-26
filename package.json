@@ -9,7 +9,6 @@
     "express": "^4.15.5",
     "get-json": "^1.0.0",
     "linebot": "^1.3.0",
-    "node-array": "0.0.7",
     "request": "^2.82.0"
   },
   "devDependencies": {},

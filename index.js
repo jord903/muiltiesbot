@@ -4,7 +4,6 @@ var getJSON = require('get-json');
 var request = require('request');
 var JSONStream = require('JSONStream');
 var es = require('event-stream');
-var Array = require('node-array');
 
 var bot = linebot({
   channelId: '1532029112',
@@ -35,7 +34,7 @@ function _bot() {
       var msg = event.message.text;
       var replyMsg = '';
       if (msg.indexOf('PM2.5') != -1) {
-        pm.forEachAsync(function(e, i) {
+        pm.forEach(function(e, i) {
           if (msg.indexOf(e[0]) != -1) {
             replyMsg = e[0] + '的 PM2.5 數值為 \n' + e[1];
           }
@@ -45,7 +44,7 @@ function _bot() {
         }
       }
       if (msg.indexOf('bot coin') != -1) {
-        coin.forEachAsync(function(c, n) {
+        coin.forEach(function(c, n) {
           if (msg.indexOf(n[0]) != -1) {
             replyMsg = '\[ ' + n[0] + ' \]\n' + '\nLast \-\-\> ' + n[1] + '\nBid \-\-\> ' + n[2] + '\nAsk \-\-\> ' + n[3];
           }
@@ -68,7 +67,7 @@ function _bot() {
 function _getJSONpm() {
   clearTimeout(timer);
   getJSON('http://opendata2.epa.gov.tw/AQX.json', function(error, pm25) {
-    pm25.forEachAsync(function(e, i) {
+    pm25.forEach(function(e, i) {
       pm[i] = [];
       pm[i][0] = e.SiteName;
       pm[i][1] = e['PM2.5'] * 1;
