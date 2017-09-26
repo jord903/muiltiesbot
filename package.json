@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "heroku-postbuild": "next build",
+    "prestart": "next build",
     "start": "node ."
   },
   "author": "",
