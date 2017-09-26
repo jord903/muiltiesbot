@@ -2,7 +2,7 @@ var linebot = require('linebot');
 var express = require('express');
 var getJSON = require('get-json');
 var request = require('request');
-var JSONStream = require('JSONStream');
+
 var es = require('event-stream');
 
 var bot = linebot({
