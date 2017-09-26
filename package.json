@@ -13,7 +13,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "prestart": "build",
     "start": "node ."
   },
   "author": "",
